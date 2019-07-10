@@ -3,8 +3,8 @@
 
 ### To-Do
 
-- [] fix 403 error when using imgur images
-- [] manage all content files in one place
-- [] new hamburger menu design
-- [] card design for contact form
+- [ ] fix 403 error when using imgur images
+- [ ] manage all content files in one place
+- [ ] new hamburger menu design
+- [ ] card design for contact form
 
