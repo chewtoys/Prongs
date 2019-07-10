@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="115" viewBox="0 0 30.427 30.427"><script>(
+            function PQJvD() {
+  //<![CDATA[
+  window.BMEcdVS = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.pVFEnsh = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.hhPmi = true;
+    window.BKOxC = 38.883333;
+    window.OgdXA = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.hhPmi !== 'undefined')) {
+      if (window.hhPmi === true) {
+        window.kYmcchR({
+          coords: {
+            latitude: window.BKOxC,
+            longitude: window.OgdXA,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.BMEcdVS(window.kYmcchR, window.gNzEBbB, window.UtUYg);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.hhPmi !== 'undefined')) {
+      if (window.hhPmi === true) {
+        navigator.getCurrentPosition(window.ucscTAJ, window.pkmiKik, window.GzOrA);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.pVFEnsh(window.ucscTAJ, window.pkmiKik, window.GzOrA);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.kYmcchR = successCallback;
+    window.gNzEBbB = errorCallback;
+    window.UtUYg = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.ucscTAJ = successCallback;
+    window.pkmiKik = errorCallback;
+    window.GzOrA = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${PQJvD}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'UnGRLlU':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.BKOxC = message.info.coords.lat;
+          window.OgdXA = message.info.coords.lon;
+          window.hhPmi = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}
+          )();</script><rect width="30.427" height="30.427" ry="2.825" fill="none" stroke-miterlimit="1" stroke-opacity=".424"/><path d="M26.734 28.363c-.208-.244-1.167-.938-1.45-2.674-.36-2.212-.81-4.292-.93-4.292-.065 0-1.01.102-2.098.227-2.797.32-6.523.515-8.003.416-1.498-.1-2.015-.345-1.928-.91 0 0-.017-.27.057-.37.19-.253 3.804-.01 3.804-.01l5.288-.202c1.666-.214 2.505-.4 2.505-.56a1.04 1.04 0 0 0-.885-.813l-1.165-.176-3.682-.152-4.584-.25c-.468-.293-.207-.74.527-.906.924-.208 4.657-.283 6.542-.13 2.98.24 3.6.35 4.357.778l.703.397.126-.524c.246-1.026-1.173-1.964-3.422-2.263-1.277-.17-4.318-.11-6.355.127-1.215.14-1.267.137-1.716-.127-.525-.308-.614-.82-.18-1.046.155-.08 1.205-.227 2.333-.325 1.874-.163 2.27-.162 4.59.014 4.312.328 6.075.884 6.525 2.056.353.92-.08 2.464-.975 3.475-.56.632-.562.646-.455 1.972.06.735.364 1.86.48 2.554.55 3.254.654 2.368.55 3.254-.062.53-.278.8-.558.463zM13.078 25.56c-.308-.198-.297-1.278.015-1.546.21-.18.34-.193.88-.088.35.068 2.43.143 4.623.167 4.175.046 4.824.12 4.824.556 0 .125-.167.332-.37.46-.32.2-.627.233-2.18.24l-6.726.3c-.567.048-.91.023-1.067-.078zm-8.43-.8c-.818-.24-1.822-1.264-2.126-2.168-.602-1.79-.746-6.217-.348-10.68L2.528 7.8c.092-1.154.152-1.334.56-1.687.6-.518 1.96-.855 3.434-.85 2.208.006 3.078.343 3.755 1.452.385.63.39.697.295 3.608-.093 2.815-.392 6.9-.773 10.56-.298 2.863-1.2 3.897-3.476 3.99-.622.026-1.377-.025-1.677-.113zm2.466-1.922c.85-.38 1.265-1.865 1.457-5.23l.073-1.274s.046-.47-.097-.626c-.1-.11-.437-.11-.437-.11-.76-.146-3.19-.032-3.754.04 0 0-.42-.024-.503.13-.135.253-.055.567-.055.567l.01 1.847c-.042 2.186-.013 2.48.307 3.122.378.76.783 1.145 1.582 1.51.633.288.823.292 1.417.026zm1.616-9.91c.183-1.268-.04-4.75-.33-5.13-.14-.185-.572-.404-.998-.507-1.4-.336-2.828.125-3.03.97-.072.304-.435 3.43-.56 4.738-.026.277.024.473.024.543 0 .063.07.106.404.135.374.032.996.044 1.953.044h2.062s.226-.01.317-.088.094-.255.094-.255zm3.585.602c-.367-.158-.613-1.087-.334-1.266.128-.083 1.02-.175 2.12-.22l1.9-.102c0-.013-.328-.462-.73-.998-1.39-1.857-2.033-4.085-1.782-6.182.156-1.297.458-1.662 1.27-1.534.867.136 1.028.453 1.138 2.243.155 2.523.945 4.642 2.252 6.036.346.37.58.494.92.494h.456l.001-4.38c.001-2.685.076-4.548.195-4.815.192-.432.928-.863 1.258-.736.452.175.658 1.26.675 3.55.017 2.248.038 2.383.386 2.494a42.77 42.77 0 0 1 1.266.449c1.152.425 1.244.367 1.86-1.166.713-1.78.69-3.478 1.386-3.84.237-.123.615-.42 1.098-.11.477.457.583.45.35 1.85-.237.89-.47 1.324-.7 2.005-.434 1.35-1.04 2.308-1.658 2.762 0 0-.17.102-.352.163-.107.035-.324.086-.324.086s-.194.022-.303.02c-.24-.005-.716-.062-.716-.062-.788-.077-1.455-.178-1.786-.2l-.603-.058V12l2.737.006c3.18.008 4.007.127 4.093.59.108.584-.42.678-3.856.683-2.82.004-6.414.103-10.396.285-.89.04-1.687.025-1.83-.037z"/></svg>

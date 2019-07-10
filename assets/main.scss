@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/functions';
+@import '~/assets/custom-variable.scss';
+
+/* custom button */
+.button.is-custom {
+  background-color: #2E4E7E;
+  color: white;
+  border-width: 0;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.18), 0 1px 5px 0 rgba(0,0,0,0.15);
+  -webkit-transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.button.is-custom:hover,
+.button.is-custom:focus {
+  color: white;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  -webkit-transition: box-shadow 0.4s ease-out;
+  transition: box-shadow 0.4s ease-out;
+}
+
+/* -------------------- */
+/* enable more image options */
+.image.is-centered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.image img.has-border {
+  border:2px solid black;
+}
+.image img.has-radius {
+  border-radius: 2%;
+}
+/* -------------------- */
+
+/* -------------------- */
+.column .is-vcentered-column {
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 100%;
+    padding: inherit;
+  }
+}
+
+.column .is-bottom-right-column {
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: inherit;
+  }
+}
+
+.column .is-bottom-column {
+  @media screen and (min-width: 1024px) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: inherit;
+    width: 100%;
+  }
+}
+
+.image.is-opacity-hover{
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all opacity 3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.card.is-pop-hover {
+  transition: all 0.5s;
+  &:hover {
+    transform:translateY(-0.5rem);
+    filter:drop-shadow(0 10px 10px rgba(154,160,185,.05)) drop-shadow(0 20px 40px rgba(166,173,201,.2));
+    a {
+      text-decoration: underline;
+      text-decoration-color: black;
+      text-decoration-skip: auto;
+    }
+  }
+}
+
+/* custom post styling*/
+.content .is-post-meta {
+  font-size: $size-7;
+  color: $grey-dark;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.content .is-post-title {
+  font-family: $title-family;
+  text-align: center;
+  font-weight: 600 !important;
+}
+
+.content .is-post-body {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// 4. Import the rest of Bulma
+@import '~bulma';
+
+/* bulma extensions */
+/*
+@import "../node_modules/bulma-tooltip/dist/css/bulma-tooltip";
+@import "../node_modules/bulma-quickview/dist/css/bulma-quickview";
+*/
+
+/* -------------------- */
+/* enable sticky footer */
+
+body {
+  &.default {
+    display: flex;
+    // use this if navbar is NOT fixed (default)
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  &.fixed {
+    display: flex;
+    // use this if navbar is fixed
+    min-height: calc(100vh - #{$navbar-height} - 2*#{$navbar-padding-vertical});
+    padding-top: $navbar-height;
+    flex-direction: column;
+  }
+}
+
+/* Depracted */
+/*
+section {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+*/
+
+/* -------------------- */
+/* enable correct position of div after the navbar fixed at the top*/
+/* this need to after the import since it uses the derived variables */
+/* -------------------- */
+.navbar-wrapper{
+  height: $navbar-height + 2*$navbar-padding-vertical;
+  @media screen and (max-width: 1023px) {
+    height: $navbar-height;
+  }
+}
+/* -------------------- */
+
+/* style <hr> divider */
+hr {
+  &.is-title-divider {
+    border: 0;
+    height: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: $text;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+  }
+}
+
+/* style head tag */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-family !important;
+  font-weight: 400 !important;
+
+  &.has-divider {
+  width: 90%;
+  margin: .7em auto;
+  overflow: hidden;
+  text-align: center;
+  }
+
+  &.has-divider:before, &.has-divider:after {
+    content: "";
+    display: inline-block;
+    width: 50%;
+    margin: 0 .5em 0 -55%;
+    vertical-align: middle;
+    border-bottom: 1px solid;
+    border-color: #dbdbdb;
+  }
+
+  &.has-divider:after {
+    margin: 0 -55% 0 .5em;
+  }
+}
+
+/* change the default behavior of .card-header-title */
+.card-header-title {
+  font-family: $subtitle-family;
+  font-weight: 400;
+}
+
+/* hide navbar when scroll down and show when scroll up*/
+.nav-up {
+    top: -$navbar-height - 2*$navbar-padding-vertical !important;
+}
+
+.navbar {
+  transition: top 0.2s ease-in-out;
+}

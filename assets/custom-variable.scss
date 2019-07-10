@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+// edit this file to customize variables used in Bulma
+// see https://bulma.io/documentation/customize/variables/#initial-variables for a complete list of variables
+
+/*-------------------------------------------
+						Set initial variable
+-------------------------------------------*/
+
+// Set colors:
+// define custom color used in Bulma
+// NOTE: primary/info/success/warning/danger etc colors are
+// derived from initial variables
+// it is best to redefine initial variables instead of
+// redefining the $primary, $info, etc directly
+$turquoise: #4C8DAE;
+$cyan: #D3E0F3;
+$green: #7BCFA6;
+$yellow: #FFC773;
+$red: #F05654;
+$blue: #4B5CC4;
+$purple: #801DAE;
+$orange: #E29C45;
+
+$white: #FFFFFF;
+$white-bis: #F5FFFF;
+$white-ter: #D8E6FF;
+$grey-lighter: #A1AFC9;
+$grey-light: #8794AE;
+$grey: #6D7B93;
+$grey-dark: #546279;
+$grey-darker: #3C4A60;
+$black-ter: #0F1F32;
+$black-bis: #00051D;
+$black: #000000;
+
+// set font family
+$family-sans-serif: 'Source Sans Pro', 'Noto Sans SC', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-monospace: 'Fira Code', monospace;
+// add a serif family
+$family-serif: 'Source Serif Pro', serif;
+
+// set size variables
+// use https://grtcalculator.com/ to compute suitable ratio
+$size-1: 3.1875rem;
+$size-2: 2.625rem;
+$size-3: 2.0625rem;
+$size-4: 1.625rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.8125rem;
+
+// set radius variables
+$radius-small: 1px;
+$radius: 3px;
+$radius-large: 5px;
+
+/*--------------------------------------------------------------------------------------
+						Set derived variable
+--------------------------------------------------------------------------------------*/
+
+$family-secondary: 'Oswald', 'Noto Sans SC', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-code: $family-monospace;
+$title-family: $family-secondary;
+$subtitle-family: $family-secondary;
+$button-family: $family-monospace;
+
+$text: hsl(0, 0%, 29%);
+$text-light: hsl(0, 0%, 48%);
+$text-strong: hsl(0, 0%, 21%);
+
+/*--------------------------------------------------------------------------------------
+						Set general variable
+--------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------------------------
+						Set element/component variable
+--------------------------------------------------------------------------------------*/
+
+// footer padding
+$footer-padding: 5rem 1.5rem 5rem;
+
+// expand image dimensions
+$dimensions: 16 24 32 48 64 96 128 256 512 1024;
+
+// card shadow
+$card-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+
+// section padding
+$section-padding: 5rem 1.5rem;
