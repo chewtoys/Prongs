@@ -2,9 +2,9 @@ Personal site built using Nuxt.js, Bulma and many others ...
 
 > In Progress :construction:
 
-### To-Do
+-----
 
-#### major
+#### Basic
 
 - [ ] add research page
 - [ ] add publication page
@@ -17,8 +17,10 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] enable archive page
 - [ ] assets optimization
 - [ ] bundle optimization
+- [ ] social media share buttons (similar as [Grammarly.com](app.grammarly.com))
+- [ ] show instagram posts live on website
 
-#### minor
+#### Minor
 
 - [ ] fix 403 error when using imgur images
 - [ ] manage all content files in one place
