@@ -1,22 +1,10 @@
-# my-nuxt-site
+> Personal site built using Nuxt.js, Bulma and many others ...
 
-> Personal site built using Vue + Nuxt + Bulma
 
-## Build Setup
+### To-Do
 
-``` bash
-# install dependencies
-$ npm install
+- [] fix 403 error when using imgur images
+- [] manage all content files in one place
+- [] new hamburger menu design
+- [] card design for contact form
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
