@@ -45,7 +45,8 @@
     "purgecss-whitelister": "^2.4.0",
     "vue-katex": "^0.2.0",
     "vue-lazyload": "^1.3.1",
-    "vue-scrollto": "^2.15.0"
+    "vue-scrollto": "^2.15.0",
+    "vue-social-sharing": "^2.4.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
