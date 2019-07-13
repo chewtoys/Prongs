@@ -17,7 +17,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] enable archive page
 - [ ] assets optimization
 - [ ] bundle optimization
-- [ ] social media share buttons (similar as [Grammarly.com](app.grammarly.com))
+- [x] social media share buttons (similar as [Grammarly.com](app.grammarly.com))
 - [ ] show instagram posts live on website
 
 #### Minor
