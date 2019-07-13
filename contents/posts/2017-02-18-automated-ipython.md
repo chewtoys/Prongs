@@ -1,7 +1,7 @@
 ---
 title: "How to Access iPython Notebook On A Remote Server ?"
 date: 2017-02-18
-excerpt: "Ever wondering how to run a ipython notebook on a remote machine? Here is how to do it in a simple way."
+excerpt: "Ever wondering how to run a ipython notebook on a remote machine? Here is how to do it in a simple way. My research work involves a lot of using of IPython Notebook. I usually do it on an office MAC. However I also very often need to access it from home. After a brief searching, I found these three wonderful articles on this topic"
 categories:
   - code
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Understanding LAMMPS Source Codes: A Study Note"
 date: 2016-04-16
-excerpt: "Learn how to hack your LAMMPS codes. Lessons from studying source codes."
+excerpt: "Learn how to hack your LAMMPS codes. Lessons from studying source codes. This is a note about learning LAMMPS source codes. This note focuses on compute style of Lammps which is used to compute certain quantity during the simulation run. Of course you can as well compute these quantities in post-process, however it's usually faster to do it in the simulation since you can take advantage of the all the distance, forces, et al generated during the simulation instead of computing them again in post-process"
 categories:
   - research
 tags:

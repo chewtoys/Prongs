@@ -1,7 +1,7 @@
 ---
 title: "Generating Random Walk Using Normal Modes"
 date: 2017-11-17
-excerpt: "Random walks generated in an alternative way and understanding Rouse model"
+excerpt: "Random walks generated in an alternative way and understanding Rouse model. Long time ago, I wrote about how to use Pivot algorithm to generate equilibrium conformations of a random walk, either self-avoiding or not. The volume exclusion of a self-avoiding chain make it non-trivial to generate conformations. Gaussian chain, on the other hand, is very easy and trivial to generate. In addition to the efficient pivot algorithm, in this article, I will show another interesting but non-straightforward method to generate gaussian chain conformations"
 categories:
   - research
 tags:

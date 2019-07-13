@@ -1,7 +1,7 @@
 ---
 title: "Use Tikhonov Regularization to Solve Fredholm Integral Equation"
 date: 2019-04-26
-excerpt: "Simple python code for solving integral equation"
+excerpt: "Simple python code for solving integral equation. In this article, I wrote about how to solve for fredholm integral equation using tikhonov regularization. The algorithm is also provided in python code."
 categories:
   - research
 tags:
