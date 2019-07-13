@@ -21,6 +21,12 @@ var path = require('path');
 export default {
   mode: 'universal',
   /*
+   ** Environment variables
+   */
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  /*
    ** Headers of the page
    */
   head: {
@@ -69,7 +75,8 @@ export default {
     { src: '~/plugins/day.js' },
     //{ src: '~/plugins/importAll.js' },
     { src: '~/plugins/customMarkdownRenderer.js' },
-    { src: '~/plugins/lazyload.js' }
+    { src: '~/plugins/lazyload.js' },
+    { src: '~/plugins/socialshare.js' }
   ],
   /*
    ** Nuxt.js modules
@@ -86,10 +93,10 @@ export default {
     // enable markdown
     //'@nuxtjs/markdownit',
     // enable scss variable accessible in every vue single file component
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources'
     // purge css
-    'nuxt-purgecss',
-    'nuxt-compress'
+    //'nuxt-purgecss',
+    //'nuxt-compress'
   ],
   purgeCSS: {
     mode: 'postcss',
