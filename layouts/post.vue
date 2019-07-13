@@ -1,15 +1,7 @@
 <template>
 <div id="post">
   <v-navbar v-bind:class="{'is-fixed-top':hasStickyNavbar}"></v-navbar>
-  <section class="section">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-half-desktop is-two-thirds-tablet is-full-mobile">
-          <nuxt />
-        </div>
-      </div>
-    </div>
-  </section>
+  <nuxt />
   <v-footer></v-footer>
 </div>
 </template>
