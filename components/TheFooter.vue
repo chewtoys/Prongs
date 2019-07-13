@@ -3,7 +3,7 @@
   <div class="content has-text-centered">
   	<p class="buttons are-medium">
     	<template v-for="socialLink in socialLinks">
-    		<a class="button buttonLeft" v-bind:key="socialLink.id" v-bind:href="socialLink.link">
+    		<a class="button is-material-flat" v-bind:key="socialLink.id" v-bind:href="socialLink.link">
     			<span class="icon">
 			      <font-awesome-icon :icon="[socialLink.iconName.split(' ')[0], socialLink.iconName.split(' ')[1]]" :size="iconSize"/>
 			    </span>
@@ -81,6 +81,7 @@ export default {
 	justify-content: center;
 }
 
+/*
 .button {
 	background-color: white;
 	border: 0;
@@ -115,4 +116,5 @@ export default {
 .buttonLeft span {
   z-index: 1;
 }
+*/
 </style>
