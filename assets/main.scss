@@ -136,6 +136,18 @@
   }
 }
 
+// page title
+.page-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  z-index: -1;
+  width: 100%;
+  height: 28px;
+  background: $cyan;
+}
+
 // 4. Import the rest of Bulma
 @import '~bulma';
 
