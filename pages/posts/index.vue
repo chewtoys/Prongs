@@ -12,7 +12,7 @@
             </p>
             <p class="card-header-title">
               <template v-for="tag in post.tags">
-                <span class="tag is-light is-rounded">#{{ tag }}</span>
+                <span class="tag is-success is-rounded">#{{ tag }}</span>
               </template>
             </p>
             <nuxt-link :to="'/posts/'+post.slug" class="card-header-icon" aria-label="read full article">
