@@ -2,6 +2,8 @@
 <section class="section">
   <div class="columns is-centered">
     <div class="column is-half-desktop is-two-thirds-tablet">
+      <h1 class="title is-1 page-title is-relative" style="display: inline-block;">Blog</h1>
+      <h5 class="subtitle is-5">Research, Photography, and random Thoughts</h5>
       <template v-for="post in posts">
         <div class="card is-shadowless">
           <div class="card-header is-shadowless">
