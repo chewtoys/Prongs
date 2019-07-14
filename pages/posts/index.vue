@@ -5,7 +5,7 @@
       <h1 class="title is-1 page-title is-relative" style="display: inline-block;">Blog</h1>
       <h5 class="subtitle is-5">Research, photography, and random thoughts</h5>
       <template v-for="post in posts">
-        <div class="card is-shadowless">
+        <div class="card">
           <div class="card-header is-shadowless">
             <p class="card-header-title card-header-meta">
               {{ post.date }} &bull; {{ post.wordCount }} Words &bull; {{ post.readTime }} minutes read
@@ -96,6 +96,11 @@ export default {
 <style lang="scss" scoped>
 .card {
   margin-bottom: 2rem;
+  box-shadow: none;
+  transition: box-shadow .15s cubic-bezier(.4,0,.2,1);
+  &hover {
+    box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+  }
 }
 
 .card-header-meta {
