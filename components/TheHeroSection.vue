@@ -5,7 +5,7 @@
       <div class="columns is-variable is-8">
         <div class="column is-5">
           <figure class="image is-centered is-1by1">
-            <img v-bind:src="photoFile" class="has-radius" style="filter: drop-shadow(0 0 5px #949494);" />
+            <img v-lazy="getImgUrl(photoFile)" class="has-radius" style="filter: drop-shadow(0 0 5px #949494);" />
           </figure>
         </div>
         <div class="column is-7 is-relative">
@@ -50,6 +50,11 @@ export default {
 	props: {
     photoFile: String,
     heroContent: Object
+  },
+  methods: {
+    getImgUrl (pic) {
+      return require('~/assets/images/'+pic)
+    }
   }
 }
 </script>
