@@ -44,11 +44,6 @@ export default {
     return {
       navbaritems: [
         {
-          id:0,
-          name:'about',
-          link:'/about'
-        },
-        {
           id:1,
           name:'research',
           link:'/research'
