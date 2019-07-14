@@ -27,7 +27,7 @@ export default {
 	},
 	data () {
 		return {
-			photoFile: '/photo.png',
+			photoFile: 'photo.jpg',
 			heroContent: {
         title: "Hi,I'm",
         name: "Guang Shi",
@@ -37,13 +37,13 @@ export default {
 				{
 					id: 1,
 					name: 'Chromosome Copolymer Model',
-					image: 'project-ccm-illustration.png',
+					image: 'project-ccm-illustration.jpg',
 					link: '#'
 				},
 				{
 					id: 2,
 					name: 'FISH-Hi-C Paradox',
-					image: 'project-heterogeneity-illustration.png',
+					image: 'project-heterogeneity-illustration.jpg',
 					link: '#'
 				},
 				{
@@ -55,7 +55,7 @@ export default {
 				{
 					id: 4,
 					name: 'Multi-motors System',
-					image: 'project-motor-illustration.png',
+					image: 'project-motor-illustration.jpg',
 					link: '#'
 				}
 			],
