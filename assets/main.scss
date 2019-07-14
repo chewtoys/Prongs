@@ -125,7 +125,7 @@
 .content .is-post-title {
   font-family: $title-family;
   text-align: center;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 .content .is-post-body {
@@ -221,8 +221,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $title-family !important;
-  font-weight: 400 !important;
+  font-family: $title-family;
+  font-weight: 400;
 
   &.has-divider {
   width: 90%;
