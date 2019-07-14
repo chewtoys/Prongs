@@ -75,6 +75,7 @@ export default {
 <style lang='scss' scoped>
 // nuxt-link active class
 .nuxt-link-exact-active, .nuxt-link-active {
-  border-bottom: 2px solid $blue;
+  background-color: $cyan;
+  color: $blue;
 }
 </style>
