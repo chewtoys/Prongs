@@ -2,7 +2,7 @@
 <nav class="navbar is-spaced">
   <div class="container">
     <div class="navbar-brand">
-      <nuxt-link to="/" class="navbar-item">
+      <nuxt-link to="/" class="navbar-item" active-class="sitelogo-link-active" exact-active-class="sitelogo-exact-link-active">
           <SiteLogo v-bind:class="{ animated: true }" v-bind:width="30" />
       </nuxt-link>
 
@@ -71,3 +71,10 @@ export default {
   }
 }
 </script>
+
+<style lang='scss' scoped>
+// nuxt-link active class
+.nuxt-link-exact-active, .nuxt-link-active {
+  border-bottom: 2px solid $blue;
+}
+</style>
