@@ -52,10 +52,8 @@ export default {
   z-index: 1001;
   width: 300px;
   height: 100%;
-  background: #1F2430;
-  //color: white;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  background: #A1AFC9;
+  padding: 1.5em 1.5em 1.5em;
   -webkit-transform: translate3d(300px,0,0);
   transform: translate3d(300px,0,0);
   -webkit-transition: -webkit-transform 0.4s;
@@ -64,7 +62,7 @@ export default {
   transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
 
-.side-menu-active.side-menu-wrap {
+.side-menu-active .side-menu-wrap {
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
   -webkit-transition: -webkit-transform 0.8s;
