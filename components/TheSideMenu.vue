@@ -52,10 +52,10 @@ export default {
   z-index: 1001;
   width: 300px;
   height: 100%;
-  background: #A1AFC9;
+  background: $grey-lighter;
   padding: 1.5em 1.5em 1.5em;
-  -webkit-transform: translate3d(300px,0,0);
-  transform: translate3d(300px,0,0);
+  -webkit-transform: translate3d(100%,0,0);
+  transform: translate3d(100%,0,0);
   -webkit-transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
