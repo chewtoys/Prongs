@@ -77,6 +77,8 @@ export default {
     { src: '~/plugins/customMarkdownRenderer.js' },
     { src: '~/plugins/lazyload.js' },
     { src: '~/plugins/socialshare.js' }
+    //{ src: '~/plugins/burgermenu.js', mode: 'client' }
+    //{ src: '~/plugins/clickoutside.js' }
   ],
   /*
    ** Nuxt.js modules

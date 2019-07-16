@@ -12,7 +12,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] enable pagination
 - [ ] enable tags/category
 - [ ] enable in-site search
-- [ ] slide-in menu
+- [x] slide-in menu
 - [ ] custom copy button for code fence
 - [ ] enable archive page
 - [ ] assets optimization
