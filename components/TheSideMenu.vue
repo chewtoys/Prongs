@@ -1,6 +1,6 @@
 <template>
 <div class="side-menu-wrap">
-  <aside class="menu">
+  <aside class="menu has-text-centered">
     <ul class="menu-list">
     	<template v-for="navbaritem in navbaritems">
     		<li>
