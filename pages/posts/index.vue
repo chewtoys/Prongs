@@ -88,7 +88,7 @@ export default {
       ]
     }
   },
-  layout: 'post'
+  layout: 'default'
 }
 
 </script>

@@ -70,7 +70,7 @@ export default {
       ]
     }
   },
-  layout: 'post',
+  layout: 'default',
   mounted () {
     this.$mediumZoom('.content img', { scrollOffset: 0, margin:48 });
     Prism.highlightAll(); // needed to correctly re-render copy-to-clipboard between route change

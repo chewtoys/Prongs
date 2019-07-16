@@ -78,6 +78,6 @@ export default {
       aboutBody: md.render(res.body)
     };
   },
-  layout: 'home'
+  layout: 'default'
 }
 </script>

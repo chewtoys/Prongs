@@ -1,10 +1,12 @@
 <template>
 <section class="section">
-  <div class="columns is-centered">
-  	<div class="column is-half-desktop is-two-thirds-tablet">
-  		<h1 class="title is-1 page-title is-relative" style="display: inline-block;">Publication</h1>
-  		<div class="content" v-html="publicationBody"></div>
-  	</div>
+  <div class='container'>
+    <div class="columns is-centered">
+    	<div class="column is-half-desktop is-two-thirds-tablet">
+    		<h1 class="title is-1 page-title is-relative" style="display: inline-block;">Publication</h1>
+    		<div class="content" v-html="publicationBody"></div>
+    	</div>
+    </div>
   </div>
 </section>
 </template>
@@ -23,7 +25,8 @@ export default {
     return {
     	publicationBody: content
     }
-	}
+	},
+  layout: "default"
 }
 </script>
 
