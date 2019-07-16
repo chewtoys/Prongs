@@ -24,7 +24,7 @@
         </span>
       </button>
       -->
-      <span class="icon side-menu-button" @click="$emit('clickMenuButton')">
+      <span class="icon side-menu-button" v-click-outside="emitSignal" @click="$emit('clickMenuButton')">
           <font-awesome-icon :icon="['fas', 'bars']" size="lg"/>
       </span>
     </div>
@@ -73,6 +73,11 @@ export default {
           link:'/photography'
         }
       ]
+    }
+  },
+  methods: {
+    emitSignal: function () {
+      this.$emit('clickOutside')
     }
   },
   directives: {
