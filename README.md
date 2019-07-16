@@ -25,4 +25,5 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] fix 403 error when using imgur images
 - [ ] manage all content files in one place
 - [ ] card design for contact form
+- [ ] figure out how to let image has a different width than the text in a blog post (similar to Medium.com).
 

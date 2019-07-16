@@ -1,29 +1,31 @@
 <template>
 <section class="section">
-  <div class="columns is-centered">
-    <template v-if="enableSocialShare">
-      <div class="column is-1 is-hidden-mobile">
-        <v-socialshare :share-url="fullUrl"
-                       :share-title="post.attr.title"
-                       :share-description="post.attr.excerpt"
-                       :share-hashtag="(post.attr.tags).join()"
-                       style="position: sticky;top: 40vh;flex-direction: column;"
-        >
-        </v-socialshare>
+  <div class="container">
+    <div class="columns is-centered">
+      <template v-if="enableSocialShare">
+        <div class="column is-2 is-hidden-mobile">
+          <v-socialshare :share-url="fullUrl"
+                         :share-title="post.attr.title"
+                         :share-description="post.attr.excerpt"
+                         :share-hashtag="(post.attr.tags).join()"
+                         style="position: sticky;top: 40vh;flex-direction: column;"
+          >
+          </v-socialshare>
+        </div>
+      </template>
+      <div class="column is-two-thirds-desktop is-two-thirds-tablet">
+        <v-singlepost v-bind:post-title="post.attr.title" v-bind:post-date="post.attr.date" v-bind:post-read-time="post.attr.readtime" v-bind:post-body="post.content"></v-singlepost>
       </div>
-    </template>
-    <div class="column is-half-desktop is-two-thirds-tablet">
-      <v-singlepost v-bind:post-title="post.attr.title" v-bind:post-date="post.attr.date" v-bind:post-read-time="post.attr.readtime" v-bind:post-body="post.content"></v-singlepost>
-    </div>
-    <div class="column is-1">
-      <div class="is-hidden-tablet">
-        <v-socialshare :share-url="fullUrl"
-                       :share-title="post.attr.title"
-                       :share-description="post.attr.excerpt"
-                       :share-hashtag="(post.attr.tags).join()"
-                       style="justify-content: center;"
-        >
-        </v-socialshare>
+      <div class="column is-2 is-hidden-mobile">
+        <div class="is-hidden-tablet">
+          <v-socialshare :share-url="fullUrl"
+                         :share-title="post.attr.title"
+                         :share-description="post.attr.excerpt"
+                         :share-hashtag="(post.attr.tags).join()"
+                         style="justify-content: center;"
+          >
+          </v-socialshare>
+        </div>
       </div>
     </div>
   </div>

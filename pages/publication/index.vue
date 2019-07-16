@@ -2,7 +2,7 @@
 <section class="section">
   <div class='container'>
     <div class="columns is-centered">
-    	<div class="column is-half-desktop is-two-thirds-tablet">
+    	<div class="column is-two-thirds-desktop is-two-thirds-tablet">
     		<h1 class="title is-1 page-title is-relative" style="display: inline-block;">Publication</h1>
     		<div class="content" v-html="publicationBody"></div>
     	</div>
