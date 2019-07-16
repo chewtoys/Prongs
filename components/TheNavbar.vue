@@ -6,23 +6,27 @@
           <SiteLogo v-bind:class="{ animated: true }" v-bind:width="30" />
       </nuxt-link>
 
-      <div class="navbar-item is-hidden-desktop">
-        <span class="icon is-enlarge-hover">
-          <i class="fab fa-github fa-fw fa-lg"></i>
+      <!--
+      <a role="button" class="navbar-burger burger" @click="toggleMenu" :class="{ 'is-active': isToggled }" aria-label="menu" aria-expanded="false">
+        <span class="icon" @click="toggleMenu">
+          <font-awesome-icon :icon="['fas', 'bars']"/>
         </span>
-      </div>
-
-      <div class="navbar-item is-hidden-desktop">
-        <span class="icon is-enlarge-hover">
-          <i class="fab fa-instagram fa-fw fa-lg"></i>
-        </span>
-      </div>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
+      -->
+
+      <!--
+      <button class="button is-relative menu-button" @click="toggleMenu">
+        <span class="icon">
+          <font-awesome-icon :icon="['fas', 'bars']"/>
+        </span>
+      </button>
+      -->
+      <span class="icon side-menu-button" @click="$emit('clickMenuButton')">
+          <font-awesome-icon :icon="['fas', 'bars']" size="lg"/>
+      </span>
     </div>
 
     <div class="navbar-menu">
@@ -37,9 +41,14 @@
 </template>
 
 <script>
-import SiteLogo from '~/components/SiteLogo.vue'
+import SiteLogo from '~/components/SiteLogo.vue';
+import ClickOutside from 'vue-click-outside';
 
 export default {
+  components: {
+    SiteLogo,
+    ClickOutside
+  },
   data () {
     return {
       navbaritems: [
@@ -66,8 +75,8 @@ export default {
       ]
     }
   },
-  components: {
-    SiteLogo
+  directives: {
+    ClickOutside
   }
 }
 </script>
@@ -77,5 +86,18 @@ export default {
 .nuxt-link-exact-active, .nuxt-link-active {
   background-color: $cyan;
   color: $blue;
+}
+
+.side-menu-button {
+  margin-left: auto;
+  display: inline-flex;
+  align-self: center;
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .side-menu-button {
+    display: none;
+  }
 }
 </style>
