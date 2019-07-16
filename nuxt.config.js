@@ -71,14 +71,10 @@ export default {
   plugins: [
     { src: '~/plugins/fontawesome.js' },
     { src: '~/plugins/mediumzoom.js' },
-    //{ src: '~/plugins/prism.js', mode: 'server' },
     { src: '~/plugins/day.js' },
-    //{ src: '~/plugins/importAll.js' },
     { src: '~/plugins/customMarkdownRenderer.js' },
     { src: '~/plugins/lazyload.js' },
     { src: '~/plugins/socialshare.js' }
-    //{ src: '~/plugins/burgermenu.js', mode: 'client' }
-    //{ src: '~/plugins/clickoutside.js' }
   ],
   /*
    ** Nuxt.js modules
@@ -102,7 +98,7 @@ export default {
   ],
   purgeCSS: {
     mode: 'postcss',
-    whitelist: ["fixed", "default", "medium-zoom-image"],
+    whitelist: ["fixed", "default", "medium-zoom-image", "side-menu-active"],
     whitelistPatterns: [/(-|^)fa(-1|$)/, /^pre/, /^code/, /^blockquote$/, /^prism-/],
     whitelistPatternsChildren: [/^pre/, /^code/, /^blockquote$/]
   },

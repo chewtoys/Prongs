@@ -1,5 +1,5 @@
 <template>
-<div :class="{ 'side-menu-active': sideMenuToggled, 'fixed': hasStickyNavbar }">
+<div :class="{ 'side-menu-active': sideMenuToggled }">
   <v-side-menu></v-side-menu>
   <div class="sm-content-wrap">
     <div class="sm-content" :class="{ 'fixed': hasStickyNavbar }">

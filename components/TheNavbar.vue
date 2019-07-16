@@ -6,24 +6,6 @@
           <SiteLogo v-bind:class="{ animated: true }" v-bind:width="30" />
       </nuxt-link>
 
-      <!--
-      <a role="button" class="navbar-burger burger" @click="toggleMenu" :class="{ 'is-active': isToggled }" aria-label="menu" aria-expanded="false">
-        <span class="icon" @click="toggleMenu">
-          <font-awesome-icon :icon="['fas', 'bars']"/>
-        </span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-      -->
-
-      <!--
-      <button class="button is-relative menu-button" @click="toggleMenu">
-        <span class="icon">
-          <font-awesome-icon :icon="['fas', 'bars']"/>
-        </span>
-      </button>
-      -->
       <span class="icon side-menu-button" v-click-outside="emitSignal" @click="$emit('clickMenuButton')">
           <font-awesome-icon :icon="['fas', 'bars']" size="lg"/>
       </span>
