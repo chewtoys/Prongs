@@ -160,7 +160,7 @@
 /* -------------------- */
 /* enable sticky footer */
 
-body {
+.sm-content {
   &.default {
     display: flex;
     // use this if navbar is NOT fixed (default)
@@ -170,14 +170,13 @@ body {
   &.fixed {
     display: flex;
     // use this if navbar is fixed
-    min-height: calc(100vh - #{$navbar-height} - 2*#{$navbar-padding-vertical});
+    //min-height: calc(100vh - #{$navbar-height} - 2*#{$navbar-padding-vertical});
+    min-height: 100vh;
     padding-top: $navbar-height;
     flex-direction: column;
   }
 }
 
-/* Depracted */
-/*
 section {
   flex: 1 0 auto;
 }
@@ -185,7 +184,7 @@ section {
 .footer {
   flex-shrink: 0;
 }
-*/
+/* -------------------- */
 
 /* -------------------- */
 /* enable correct position of div after the navbar fixed at the top*/

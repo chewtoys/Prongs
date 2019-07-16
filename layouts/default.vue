@@ -1,8 +1,8 @@
 <template>
-<div :class="{ 'side-menu-active': sideMenuToggled }">
+<div :class="{ 'side-menu-active': sideMenuToggled, 'fixed': hasStickyNavbar }">
   <v-side-menu></v-side-menu>
   <div class="sm-content-wrap">
-    <div class="sm-content">
+    <div class="sm-content" :class="{ 'fixed': hasStickyNavbar }">
       <v-navbar @clickOutside="hideSideMenu" @clickMenuButton="showSideMenu" :class="{ 'is-fixed-top': hasStickyNavbar }"></v-navbar>
       <nuxt />
       <v-footer></v-footer>
@@ -35,9 +35,6 @@ export default {
     showSideMenu: function () {
       this.sideMenuToggled = true
     }
-  },
-  mounted () {
-    document.body.classList.toggle('fixed', this.hasStickyNavbar);
   }
 }
 </script>
