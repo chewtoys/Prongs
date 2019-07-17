@@ -8,7 +8,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 
 - [ ] add research page
 - [x] add publication page
-- [ ] add photography page
+- [x] add photography page
 - [ ] enable pagination
 - [ ] enable tags/category
 - [ ] enable in-site search
