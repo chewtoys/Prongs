@@ -35,7 +35,7 @@ export default {
         {
           id:4,
           name:'photography',
-          link:'/photography'
+          link:'/gallery'
         }
       ]
     }
@@ -44,6 +44,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+// nuxt-link active class
+.nuxt-link-exact-active, .nuxt-link-active {
+  background-color: $cyan;
+  color: $blue;
+}
+
 .side-menu-wrap {
   top: 0;
   bottom: 0;

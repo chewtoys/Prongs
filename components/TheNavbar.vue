@@ -52,7 +52,7 @@ export default {
         {
           id:4,
           name:'photography',
-          link:'/photography'
+          link:'/gallery'
         }
       ]
     }
