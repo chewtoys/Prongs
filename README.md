@@ -9,7 +9,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] add research page
 - [x] add publication page
 - [x] add photography page
-- [ ] add meta info for each page (for better SEO)
+- [x] add meta info for each page (for better SEO)
 - [ ] enable pagination
 - [ ] enable tags/category
 - [ ] enable in-site search
