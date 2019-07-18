@@ -78,6 +78,18 @@ export default {
       aboutBody: md.render(res.body)
     };
   },
-  layout: 'default'
+  head () {
+  	return {
+  		title: process.env.siteTitle,
+  		meta: [
+  			{ name: 'description', hid: 'description', content: process.env.siteDescription },
+  			// Open Graph
+  			{ name: 'og:site_name', hid: 'og:site_name', content: process.env.siteTitle },
+  			{ name: 'og:title', hid: 'og:title', content: process.env.siteTitle },
+  			{ name: 'og:description', hid: 'og:description', content: process.env.siteDescription },
+  			{ name: 'og:type', hid: 'og:type', content: 'website' }
+  		]
+  	}
+  }
 }
 </script>

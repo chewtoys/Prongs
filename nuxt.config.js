@@ -13,10 +13,9 @@ function getSlugs(post, _) {
   return `/posts/${slug}`;
 }
 
-// require moment.js
-//const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
-
 var path = require('path');
+
+require('dotenv').config();
 
 export default {
   mode: 'universal',
@@ -24,21 +23,19 @@ export default {
    ** Environment variables
    */
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    siteTitle: 'Guang Shi',
+    siteDescription: 'Personal website. Research, Blog, and Photography...',
+    siteTitleSeparator: '|',
+    wordsPerMinute: 200
   },
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      },
       { name: 'msapplication-TileColor', content: '#da532c' },
       { name: "msapplication-config", content: "/favicon/browserconfig.xml" },
       { name: 'theme-color', content: '#ffffff' }
@@ -49,13 +46,12 @@ export default {
            { rel: "manifest", href: "/favicon/site.webmanifest" },
            { rel: "mask-icon", href: "/favicon/safari-pinned-tab.svg", color: '#5bbad5'},
            { rel: "shortcut icon", href: "/favicon/favicon.ico" },
-           { rel: "stylesheet", href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Mono|Oswald:300,400,500|Source+Sans+Pro:400,400i,700,700i&display=swap' }],
-    script: []
+           { rel: "stylesheet", href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i&display=swap' }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#4C8DAE' },
   /*
    ** Global CSS
    */
@@ -94,7 +90,8 @@ export default {
     '@nuxtjs/style-resources'
     // purge css
     //'nuxt-purgecss',
-    //'nuxt-compress'
+    //'nuxt-compress',
+    //'@nuxtjs/dotenv'
   ],
   purgeCSS: {
     mode: 'postcss',
@@ -147,22 +144,6 @@ export default {
     splitChunks: {
       layouts: true
     },
-    /*
-    ** Disable html minify to render multiple line equations correctly
-    */
-    /*
-    html: {
-      minify: {
-        preserveLineBreaks: true,
-        collapseWhitespace: true
-      }
-    }
-    */
-    /*
-    plugins: [
-      new MomentLocalesPlugin({ localesToKeep: ['zh-cn'] })
-    ],
-    */
     /*
     config babel
     */

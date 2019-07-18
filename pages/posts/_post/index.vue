@@ -67,6 +67,15 @@ export default {
   },
   head () {
     return {
+      title: this.post.attr.title + ' ' + process.env.siteTitleSeparator + ' ' + process.env.siteTitle,
+      meta: [
+        { name: 'description', hid: 'description', content: 'Blog post: ' + this.post.attr.title },
+        // Open Graph
+        { name: 'og:site_name', hid: 'og:site_name', content: process.env.siteTitle },
+        { name: 'og:title', hid: 'og:title', content: this.post.attr.title },
+        { name: 'og:description', hid: 'og:description', content: 'Blog post: ' + this.post.attr.title },
+        { name: 'og:type', hid: 'og:type', content: 'website' }
+      ],
       link: [
         { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css', integrity: 'sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j', crossorigin: 'anonymous' }
       ]

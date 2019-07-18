@@ -26,7 +26,19 @@ export default {
     	publicationBody: content
     }
 	},
-  layout: "default"
+  head () {
+    return {
+      title: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) + ' ' + process.env.siteTitleSeparator + ' ' + process.env.siteTitle,
+      meta: [
+        { name: 'description', hid: 'description', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
+        // Open Graph
+        { name: 'og:site_name', hid: 'og:site_name', content: process.env.siteTitle },
+        { name: 'og:title', hid: 'og:title', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
+        { name: 'og:description', hid: 'og:description', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
+        { name: 'og:type', hid: 'og:type', content: 'website' }
+      ]
+    }
+  }
 }
 </script>
 
