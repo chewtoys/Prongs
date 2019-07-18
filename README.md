@@ -9,6 +9,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] add research page
 - [x] add publication page
 - [x] add photography page
+- [ ] add meta info for each page (for better SEO)
 - [ ] enable pagination
 - [ ] enable tags/category
 - [ ] enable in-site search
@@ -19,6 +20,7 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] bundle optimization
 - [x] social media share buttons (similar as [Grammarly.com](app.grammarly.com))
 - [ ] show instagram posts live on website
+- [ ] let user be able to run python code directly in browser
 
 #### Minor
 
