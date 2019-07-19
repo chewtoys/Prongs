@@ -21,6 +21,8 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [x] social media share buttons (similar as [Grammarly.com](app.grammarly.com))
 - [ ] show instagram posts live on website
 - [ ] let user be able to run python code directly in browser
+- [ ] enable direct gist embedding
+- [ ] RSS feed
 
 #### Minor
 
