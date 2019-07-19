@@ -3,7 +3,7 @@
   <div class="container">
     <div class="navbar-brand">
       <nuxt-link to="/" class="navbar-item" active-class="sitelogo-link-active" exact-active-class="sitelogo-exact-link-active">
-          <SiteLogo v-bind:class="{ animated: true }" v-bind:width="30" />
+          <SiteLogo :class="{ animated: true }" :width="30" />
       </nuxt-link>
 
       <span class="icon side-menu-button" v-click-outside="emitSignal" @click="$emit('clickMenuButton')">
