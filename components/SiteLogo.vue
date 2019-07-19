@@ -19,11 +19,10 @@ export default {
 .animated {
     transition: all 0.5s ease-out;
     &:hover {
-        transform: scale(1,1);
         rect {
             fill: #C83C23;
             fill-opacity: 1.0;
-            transition: fill 0.1s ease-out, fill-opacity 0.0s;
+            transition: fill 0.5s ease-out, fill-opacity 0.0s;
         }
         path {
             fill: white;
