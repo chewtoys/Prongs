@@ -71,8 +71,8 @@ export default {
 <style lang='scss' scoped>
 // nuxt-link active class
 .nuxt-link-exact-active, .nuxt-link-active {
-  background-color: $cyan;
-  color: $blue;
+  background-color: $primary;
+  color: $white;
 }
 
 .side-menu-button {

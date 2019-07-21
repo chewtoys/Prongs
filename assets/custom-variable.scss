@@ -13,15 +13,19 @@
 // derived from initial variables
 // it is best to redefine initial variables instead of
 // redefining the $primary, $info, etc directly
-$turquoise: #4C8DAE;
-$cyan: #D3E0F3;
+
+/*
+$turquoise: #305F72;
+$cyan: #568EA6;
 $green: #7BCFA6;
 $yellow: #FFC773;
 $red: #F05654;
 $blue: #4B5CC4;
 $purple: #801DAE;
 $orange: #E29C45;
+*/
 
+/*
 $white: #FFFFFF;
 $white-bis: #F5FFFF;
 $white-ter: #D8E6FF;
@@ -33,6 +37,7 @@ $grey-darker: #3C4A60;
 $black-ter: #0F1F32;
 $black-bis: #00051D;
 $black: #000000;
+*/
 
 // set font family
 $family-sans-serif: 'Source Sans Pro', 'Noto Sans SC', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -71,6 +76,16 @@ $button-family: $family-monospace;
 $text: hsl(0, 0%, 29%);
 $text-light: hsl(0, 0%, 48%);
 $text-strong: hsl(0, 0%, 21%);
+
+$primary: #1e50a2;
+$info: #89c3eb;
+$success: #69b076;
+$warning: #f5e56b;
+$danger: #e83929;
+$link: #192f60;
+$link-visited: #460e44;
+$link-focus-border: #ea5506;
+
 
 /*--------------------------------------------------------------------------------------
 						Set general variable
