@@ -25,6 +25,8 @@ Personal site built using Nuxt.js, Bulma and many others ...
 - [ ] RSS feed
 - [ ] enable comments (utterances/commento/isso/Jamstack Comments Engine/Staticman/
 - [ ] enable updated/posted difference for post
+- [ ] enable image slide show in post
+
 
 #### Minor
 
