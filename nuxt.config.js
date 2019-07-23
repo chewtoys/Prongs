@@ -15,7 +15,7 @@ function getSlugs(post, _) {
 
 var path = require('path');
 
-require('dotenv').config();
+//require('dotenv').config();
 
 export default {
   mode: 'universal',
@@ -136,9 +136,6 @@ export default {
           include: path.resolve(__dirname, 'content')
         }
       );
-      config.node = {
-        fs: 'empty'
-      };
     },
     /* temporarily fix layout leaking bug */
     splitChunks: {
