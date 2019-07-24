@@ -1,102 +1,151 @@
 <template>
-<div class="parallax-wrapper">
-  <section class="hero is-fullheight parallax has-background-image">
-  </section>
-  <section class="section has-background-white-bis">
-		<div class="container">
-			<div class="columns is-centered is-multiline is-variable is-5">
-				<div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('1.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">New York #1</p>
-	        </div>
-	      </div>
-	      <div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('2.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">New York #2</p>
-	        </div>
-	      </div>
-	      <div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('3.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">Alaska #1</p>
-	        </div>
-	      </div>
-	      <div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('4.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">California #1</p>
-	        </div>
-	      </div>
-	      <div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('5.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">Alaska #2</p>
-	        </div>
-	      </div>
-	      <div class="column is-4">
-	        <figure class="image is-3by2 is-opacity-hover" style="margin-bottom:10px;">
-	          <img v-lazy="getImgUrl('6.jpg')" class="gallery-image">
-	        </figure>
-	        <div class="content has-text-centered">
-	          <p class="subtitle">California #2</p>
-	        </div>
-	      </div>
-			</div>
-		</div>
-	</section>
-	<v-footer></v-footer>
-</div>
+  <div>
+    <v-gnavbar></v-gnavbar>
+    <section class="section">
+      <div class="columns is-centered is-multiline is-gapless">
+        <template v-for="album in albums">
+          <div
+            :key="album.id"
+            class="column is-4-desktop is-6-tablet is-relative"
+            :style="{ background: pickColor() }"
+          >
+            <nuxt-link :to="'/gallery/' + album.slug">
+              <figure class="image is-opacity-hover">
+                <img v-lazy="getImgUrl(album.cover)" class="gallery-image" />
+              </figure>
+            </nuxt-link>
+            <!--<p class="gallery-text">New York</p>-->
+          </div>
+        </template>
+      </div>
+    </section>
+    <v-footer></v-footer>
+  </div>
 </template>
 
 <script>
-import TheFooter from '~/components/TheFooter';
+import GalleryNavbar from '~/components/GalleryNavbar'
+import TheFooter from '~/components/TheFooter'
 
 export default {
-	components: {
+  components: {
+    'v-gnavbar': GalleryNavbar,
     'v-footer': TheFooter
   },
-	methods: {
-		getImgUrl (pic) {
-			return require('~/assets/gallery/'+pic)
-		}
-	},
-	head () {
+  data() {
     return {
-      title: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) + ' ' + process.env.siteTitleSeparator + ' ' + process.env.siteTitle,
+      backgroundColors: [
+        '#E0EEE8',
+        '#BBCDC5',
+        '#424C50',
+        '#A1AFC9',
+        '#D1D9E0',
+        '#D2F0F4',
+        '#FFFBF0',
+        '#F0FCFF',
+        '#F3F9F1',
+        '#FCEFE8',
+        '#F0F0F4',
+        '#758A99',
+        '#E9E7EF'
+      ],
+      albums: null
+    }
+  },
+  async asyncData({ app }) {
+    // use axios to get cover image for each album
+    const albums = (await app.$axios.get('/api/gallery/albums')).data
+    return { albums }
+  },
+  methods: {
+    getImgUrl(photoname) {
+      return require('~/contents/gallery/' + photoname)
+    },
+    pickColor() {
+      return this.backgroundColors[Math.floor(Math.random() * this.backgroundColors.length)]
+    }
+  },
+  head() {
+    return {
+      title:
+        this.$route.name.charAt(0).toUpperCase() +
+        this.$route.name.slice(1) +
+        ' ' +
+        process.env.siteTitleSeparator +
+        ' ' +
+        process.env.siteTitle,
       meta: [
-        { name: 'description', hid: 'description', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
+        {
+          name: 'description',
+          hid: 'description',
+          content:
+            this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1)
+        },
         // Open Graph
-        { name: 'og:site_name', hid: 'og:site_name', content: process.env.siteTitle },
-        { name: 'og:title', hid: 'og:title', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
-        { name: 'og:description', hid: 'og:description', content: this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1) },
+        {
+          name: 'og:site_name',
+          hid: 'og:site_name',
+          content: process.env.siteTitle
+        },
+        {
+          name: 'og:title',
+          hid: 'og:title',
+          content:
+            this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1)
+        },
+        {
+          name: 'og:description',
+          hid: 'og:description',
+          content:
+            this.$route.name.charAt(0).toUpperCase() + this.$route.name.slice(1)
+        },
         { name: 'og:type', hid: 'og:type', content: 'website' }
       ]
     }
   },
-	layout: 'gallery'
+  layout: 'gallery'
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .gallery-image {
-	object-fit:cover;
-	box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+  object-fit: cover;
+  //box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.gallery-text {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.column::before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  padding: 0;
 }
 
 .parallax-wrapper {
-	/* The height needs to be set to a fixed value for the effect to work.
+  /* The height needs to be set to a fixed value for the effect to work.
    * 100vh is the full height of the viewport. */
   height: 100vh;
   /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
@@ -109,7 +158,7 @@ export default {
 
 .parallax::after {
   /* Display and position the pseudo-element */
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 0;
   right: 0;
@@ -128,7 +177,9 @@ export default {
   z-index: -1;
 }
 
+/*
 .has-background-image::after {
   background-image: url('~assets/gallery/Forest-in-snow-large.jpg');
 }
+*/
 </style>

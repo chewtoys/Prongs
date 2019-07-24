@@ -1,21 +1,21 @@
 // glob is a small module to read 'globs', useful to get
 // a filtered file list
-const glob = require('glob');
+const glob = require('glob')
 // we acquire an array containing the filenames
 // in the articles directory
-let files = glob.sync( '**/*.md' , { cwd: 'contents/posts' });
+let files = glob.sync( '**/*.md' , { cwd: 'contents/posts' })
 
 // We define a function to trim the '.md' from the filename
 // and return the correct path.
 // This function will be used later
 function getSlugs(post, _) {
-  let slug = post.substr(0, post.lastIndexOf('.'));
-  return `/posts/${slug}`;
+  let slug = post.substr(0, post.lastIndexOf('.'))
+  return `/posts/${slug}`
 }
 
-var path = require('path');
+var path = require('path')
 
-require('dotenv').config();
+//require('dotenv').config();
 
 export default {
   mode: 'universal',
@@ -156,6 +156,10 @@ export default {
       ]
     }
   },
+  /*server middleware*/
+  serverMiddleware: [
+    '~/api/index.js'
+  ],
   /*enable vue.js devtool*/
   vue: {
     config: {
